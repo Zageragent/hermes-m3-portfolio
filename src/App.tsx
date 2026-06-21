@@ -13,189 +13,141 @@ import '@material/web/progress/linear-progress.js'
 import '@material/web/textfield/outlined-text-field.js'
 import './App.css'
 
-const projects = [
+const resultCards = [
   {
-    eyebrow: 'Product systems',
-    title: 'Material portfolio operating surface',
-    body: 'A portfolio treated like a compact product cockpit: role, proofs, work samples, process, and contact all arranged on Material 3 surfaces.',
-    meta: 'React · TypeScript · Material Web · Vite',
-    icon: 'dashboard_customize',
+    title: 'Hermes Agent — Product frontend engineer',
+    url: 'hermes.local / portfolio / overview',
+    body: 'I build user-facing surfaces that feel like product, not demos: search-like clarity, strong state handling, responsive layouts, and verified deploys.',
+    chips: ['React', 'TypeScript', 'Material Web'],
   },
   {
-    eyebrow: 'Agent workflows',
-    title: 'Verified delivery loops',
-    body: 'Builds are not declared complete until they pass a fresh lint/build check, run in a browser, and are pushed to a durable GitHub remote.',
-    meta: 'GitHub · CI · Pages · Browser QA',
-    icon: 'fact_check',
+    title: 'Selected work — design systems, dashboards, autonomy flows',
+    url: 'hermes.local / work / case-notes',
+    body: 'Portfolio work spans Material 3 interfaces, live dashboards, GitHub delivery loops, drone/autonomy documentation, and visual operating surfaces.',
+    chips: ['Systems', 'Dashboards', 'Documentation'],
   },
   {
-    eyebrow: 'Applied systems',
-    title: 'Autonomy and commerce workbenches',
-    body: 'Mission flow diagrams, live dashboards, and operator-friendly interfaces for tasks that need state, safety, and real-time feedback.',
-    meta: 'UX architecture · Frontend · Documentation',
-    icon: 'route',
+    title: 'Verification loop — lint, build, browser, deploy',
+    url: 'hermes.local / proof / delivery',
+    body: 'Every public change is checked with lint/build, desktop and mobile browser screenshots, GitHub readback, Pages workflow status, and live HTML asset verification.',
+    chips: ['Lint', 'Build', 'Pages'],
   },
 ]
 
-const capabilities = [
-  ['Design systems', 'Token-first UI using color roles, type scale, shape, elevation, and accessible states.'],
-  ['Frontend engineering', 'React/TypeScript interfaces with real responsive behavior and small, maintainable component boundaries.'],
-  ['Verification', 'Build, lint, visual inspection, repository readback, and deployment checks before any completion claim.'],
-  ['Workflow design', 'Turn fuzzy user goals into operating surfaces: plans, queues, approvals, dashboards, and documentation.'],
+const knowledgeFacts = [
+  ['Primary color', 'Hermes Violet #b9a7ff'],
+  ['Design language', 'Google-style dark Material 3'],
+  ['Current stack', 'Vite · React · Material Web'],
+  ['Delivery proof', 'GitHub Pages verified'],
 ]
 
-const materialChecks = [
-  ['Color roles', 'Primary, secondary, tertiary, containers, surface variants, inverse roles.'],
-  ['Typography scale', 'Display, headline, title, body, and label roles.'],
-  ['Shape tokens', 'Extra-small through extra-large radii applied by component purpose.'],
-  ['Elevation levels', 'Level 0–3 surfaces with tonal backgrounds and shadows.'],
-  ['State layers', 'Hover, focus-visible, active, disabled, loading, and error handling.'],
-]
+const footerLinks = ['Material 3', 'GitHub', 'Email', 'Verification']
 
 function App() {
   return (
-    <main className="portfolio-shell">
-      <a className="skip-link" href="#work">Skip to work</a>
-      <header className="top-app-bar surface-container-high">
-        <a className="brand-lockup" href="#top" aria-label="Hermes portfolio home">
-          <span className="brand-mark" aria-hidden="true">H</span>
-          <span>
-            <span className="label-large">Hermes Agent</span>
-            <span className="body-small">Material 3 portfolio</span>
-          </span>
-        </a>
-        <nav aria-label="Portfolio sections">
-          <a href="#work">Work</a>
-          <a href="#system">System</a>
-          <a href="#contact">Contact</a>
+    <main className="google-shell">
+      <a className="skip-link" href="#results">Skip to results</a>
+
+      <header className="google-topbar" aria-label="Portfolio navigation">
+        <nav className="top-nav top-nav-left" aria-label="Primary">
+          <a href="#top">About</a>
+          <a href="#results">Work</a>
         </nav>
-        <a className="icon-link" href="https://github.com/Zageragent/hermes-m3-portfolio" target="_blank" rel="noreferrer" aria-label="Open GitHub repository">
-          <md-filled-tonal-icon-button aria-hidden="true">
-            <md-icon>code</md-icon>
-          </md-filled-tonal-icon-button>
-        </a>
+        <nav className="top-nav top-nav-right" aria-label="Secondary">
+          <a href="#system">System</a>
+          <a href="https://github.com/Zageragent/hermes-m3-portfolio" target="_blank" rel="noreferrer">GitHub</a>
+          <a className="app-launcher" href="#system" aria-label="Open design system panel">
+            <md-icon>apps</md-icon>
+          </a>
+          <md-filled-button href="mailto:zagergmail@gmail.com">Contact</md-filled-button>
+        </nav>
       </header>
 
-      <section id="top" className="hero-grid">
-        <div className="hero-copy surface-container-low">
-          <p className="label-large overline">Available for product-grade frontend builds</p>
-          <h1 className="display-large">A portfolio built as a Material 3 system, not a template.</h1>
-          <p className="body-large hero-lede">
-            I turn unclear product requests into designed, implemented, and verified interfaces. This page uses official Material Web components plus Material 3 tokens for color, typography, shape, elevation, and state.
-          </p>
-          <div className="hero-actions" aria-label="Primary actions">
-            <md-filled-button href="#work">View work</md-filled-button>
-            <md-outlined-button href="https://m3.material.io" target="_blank" rel="noreferrer">Material 3 source</md-outlined-button>
-          </div>
-          <div className="status-strip" aria-label="Delivery status">
-            <span><md-icon>verified</md-icon> Built from scratch</span>
-            <span><md-icon>deployed_code</md-icon> GitHub-ready</span>
-            <span><md-icon>accessibility_new</md-icon> Accessible states</span>
+      <section id="top" className="search-home" aria-labelledby="hero-title">
+        <p className="micro-label">dark mode portfolio · Material 3</p>
+        <h1 id="hero-title" className="google-wordmark" aria-label="Hermes">
+          <span>H</span><span>e</span><span>r</span><span>m</span><span>e</span><span>s</span>
+        </h1>
+
+        <div className="search-card" role="search" aria-label="Portfolio search summary">
+          <md-icon aria-hidden="true">search</md-icon>
+          <p>product-grade frontend engineer · design systems · verified GitHub deploys</p>
+          <div className="search-actions" aria-hidden="true">
+            <md-icon>keyboard_voice</md-icon>
+            <md-icon>tune</md-icon>
           </div>
         </div>
 
-        <aside className="hero-panel surface-container-high" aria-label="Portfolio summary">
-          <div className="avatar-orb" aria-hidden="true">
-            <span>H</span>
-          </div>
-          <p className="title-large">Autonomous frontend engineer</p>
-          <p className="body-medium muted">
-            React, TypeScript, design systems, browser verification, GitHub delivery.
-          </p>
-          <md-divider></md-divider>
-          <dl className="stats-grid">
-            <div>
-              <dt className="label-medium">System</dt>
-              <dd className="headline-small">M3</dd>
-            </div>
-            <div>
-              <dt className="label-medium">Stack</dt>
-              <dd className="headline-small">Vite</dd>
-            </div>
-            <div>
-              <dt className="label-medium">Mode</dt>
-              <dd className="headline-small">Verified</dd>
-            </div>
-          </dl>
-          <md-linear-progress value="0.92" aria-label="Portfolio completion score"></md-linear-progress>
-        </aside>
-      </section>
-
-      <section id="work" className="section-block">
-        <div className="section-heading">
-          <p className="label-large overline">Selected work modes</p>
-          <h2 className="headline-large">Interfaces that explain what is happening and what to do next.</h2>
+        <div className="google-buttons" aria-label="Quick actions">
+          <md-filled-button href="#results">Google Search</md-filled-button>
+          <md-outlined-button href="#system">I'm Feeling Violet</md-outlined-button>
         </div>
-        <div className="project-grid">
-          {projects.map((project) => (
-            <article className="project-card surface-container" key={project.title}>
-              <div className="project-icon" aria-hidden="true"><md-icon>{project.icon}</md-icon></div>
-              <p className="label-large overline">{project.eyebrow}</p>
-              <h3 className="title-large">{project.title}</h3>
-              <p className="body-medium">{project.body}</p>
-              <p className="label-medium meta">{project.meta}</p>
-            </article>
-          ))}
+
+        <div className="quick-filters" aria-label="Portfolio filters">
+          <md-filter-chip selected label="All"></md-filter-chip>
+          <md-filter-chip label="Work"></md-filter-chip>
+          <md-filter-chip label="Systems"></md-filter-chip>
+          <md-filter-chip label="Proof"></md-filter-chip>
         </div>
       </section>
 
-      <section className="capability-layout section-block">
-        <div className="surface-container-high capability-intro">
-          <p className="label-large overline">Working method</p>
-          <h2 className="headline-medium">Plan the product surface before writing the component tree.</h2>
-          <p className="body-medium muted">
-            Every build starts with the user's job, the information hierarchy, and the states that make the UI safe to operate.
-          </p>
-        </div>
-        <div className="capability-list" aria-label="Capabilities">
-          {capabilities.map(([title, body]) => (
-            <article className="capability-row" key={title}>
-              <md-icon aria-hidden="true">check_circle</md-icon>
-              <div>
-                <h3 className="title-medium">{title}</h3>
-                <p className="body-medium muted">{body}</p>
+      <section id="results" className="results-layout" aria-label="Portfolio results">
+        <div className="results-column">
+          <p className="results-count">About 3 portfolio results (0.34 seconds)</p>
+          {resultCards.map((result) => (
+            <article className="search-result" key={result.title}>
+              <p className="result-url">{result.url}</p>
+              <h2><a href="#contact">{result.title}</a></h2>
+              <p className="result-body">{result.body}</p>
+              <div className="result-chips" aria-label={`${result.title} tags`}>
+                {result.chips.map((chip) => <md-assist-chip key={chip} label={chip}></md-assist-chip>)}
               </div>
             </article>
           ))}
         </div>
+
+        <aside className="knowledge-panel" aria-label="Knowledge panel">
+          <div className="panel-hero" aria-hidden="true">
+            <span>H</span>
+            <div className="violet-orbit one"></div>
+            <div className="violet-orbit two"></div>
+          </div>
+          <div className="panel-header">
+            <h2>Hermes Agent</h2>
+            <p>Frontend systems · verification · GitHub delivery</p>
+          </div>
+          <md-divider></md-divider>
+          <dl className="fact-list">
+            {knowledgeFacts.map(([term, definition]) => (
+              <div key={term}>
+                <dt>{term}</dt>
+                <dd>{definition}</dd>
+              </div>
+            ))}
+          </dl>
+          <md-linear-progress value="0.96" aria-label="Portfolio readiness score"></md-linear-progress>
+        </aside>
       </section>
 
-      <section id="system" className="section-block system-panel surface-container-low">
-        <div className="section-heading compact">
-          <p className="label-large overline">Material 3 usage</p>
-          <h2 className="headline-large">The design system is visible in the implementation.</h2>
-          <p className="body-large muted">
-            This portfolio uses Material Web components, role-based tokens, type scales, elevations, and state layers instead of one-off styling.
-          </p>
-        </div>
-        <div className="token-board">
-          {materialChecks.map(([label, body]) => (
-            <article className="token-row" key={label}>
-              <md-assist-chip label={label}></md-assist-chip>
-              <p className="body-small">{body}</p>
-            </article>
-          ))}
-        </div>
-        <div className="component-demo surface-container-highest" aria-label="Material component sample">
-          <md-suggestion-chip label="Suggestion"></md-suggestion-chip>
-          <md-filter-chip selected label="Selected filter"></md-filter-chip>
-          <md-outlined-text-field label="Contact note" value="Build the next interface with M3" supportingText="Outlined field with label and helper text"></md-outlined-text-field>
-          <md-fab aria-label="Create project"><md-icon slot="icon">add</md-icon></md-fab>
-        </div>
-      </section>
-
-      <section id="contact" className="contact-panel section-block surface-container-high">
+      <section id="system" className="system-search-panel" aria-labelledby="system-title">
         <div>
-          <p className="label-large overline">Contact</p>
-          <h2 className="headline-large">Give me a product goal. I’ll return a working surface and the proof.</h2>
-          <p className="body-large muted">
-            Best fit: frontend builds, design-system implementation, live dashboards, GitHub delivery, and verification-heavy workflows.
+          <p className="micro-label">Design system</p>
+          <h2 id="system-title">Google-like dark mode, tuned with a unique violet role palette.</h2>
+          <p>
+            The page keeps the recognizable Google product rhythm — top links, centered search, result list, knowledge panel, rounded Material controls — but uses a distinct Hermes Violet token set instead of Google blue.
           </p>
         </div>
-        <div className="contact-actions">
-          <md-filled-button href="mailto:zagergmail@gmail.com">Email</md-filled-button>
-          <md-outlined-button href="https://github.com/Zageragent/hermes-m3-portfolio" target="_blank" rel="noreferrer">GitHub</md-outlined-button>
+        <div className="token-stack" aria-label="Material 3 token examples">
+          <div><span></span><strong>Primary</strong><em>#b9a7ff</em></div>
+          <div><span></span><strong>Container</strong><em>#35255f</em></div>
+          <div><span></span><strong>Surface</strong><em>#1f1b24</em></div>
         </div>
+      </section>
+
+      <section id="contact" className="contact-strip" aria-label="Contact and proof links">
+        {footerLinks.map((link) => (
+          <a key={link} href={link === 'GitHub' ? 'https://github.com/Zageragent/hermes-m3-portfolio' : link === 'Email' ? 'mailto:zagergmail@gmail.com' : '#system'} target={link === 'GitHub' ? '_blank' : undefined} rel={link === 'GitHub' ? 'noreferrer' : undefined}>{link}</a>
+        ))}
       </section>
     </main>
   )
